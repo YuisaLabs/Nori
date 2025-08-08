@@ -1,0 +1,36 @@
+{
+  "name": "@yuisalabs/nori",
+  "version": "0.0.2",
+  "description": "Schema based form validation library written in Typescript",
+  "main": "lib/index.cjs",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuisaLabs/Nori.git"
+  },
+  "author": "yuisa-scarlet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YuisaLabs/Nori/issues"
+  },
+  "exports": {
+    "import": {
+      "default": "./lib/index.esm.js",
+      "types": "./lib/types/index.d.ts"
+    },
+    "require": {
+      "default": "./lib/index.cjs",
+      "types": "./lib/types/index.d.ts"
+    }
+  },
+  "homepage": "https://github.com/YuisaLabs/Nori#readme",
+  "devDependencies": {
+    "rollup": "^4.17.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.9.2"
+  }
+}
