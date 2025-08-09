@@ -1,6 +1,6 @@
 {
   "name": "@yuisalabs/nori",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Schema based form validation library written in Typescript",
   "main": "lib/index.cjs",
   "type": "module",

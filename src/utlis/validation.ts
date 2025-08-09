@@ -7,7 +7,7 @@ export const isEmail = (value: string): boolean => {
 };
 
 export const isPassword = (value: string, pattern?: RegExp): boolean => {
-  return PASSWORD_REGEX.test(value) || pattern.test(value);
+  return PASSWORD_REGEX.test(value) || (pattern && pattern.test(value));
 };
 
 export const isEmpty = (value: any): boolean => {
