@@ -4,19 +4,27 @@ export const VALIDATOR_OPTIONS = {
   ERROR_CLASS: "is-invalid",
   ERROR_ATTRIBUTE: "data-error-for",
   SHOW_ERRORS_IMMEDIATELY: false
-}
+};
 
 export const MESSAGES = {
   REQUIRED: "This field is required",
   INVALID_TYPE: "Invalid type provided",
   INVALID_PATTERN: "Invalid format",
-  INVALID_EMAIL: "Invalid email format. Make sure your email contains '@' and the full domain.",
-  INVALID_PASSWORD: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+  INVALID_EMAIL:
+    "Invalid email format. Make sure your email contains '@' and the full domain.",
+  INVALID_PASSWORD:
+    "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+  INVALID_LENGTH: "Length must be {length} characters",
+  INVALID_STARTS_WITH: "Value must start with {prefix}",
+  INVALID_ENDS_WITH: "Value must end with {suffix}",
+  INVALID_CONTAINS: "Value must contain {substring}",
+  INVALID_UPPERCASE: "Value must be in uppercase",
+  INVALID_LOWERCASE: "Value must be in lowercase",
   MIN_LENGTH: "Minimum length is {length} characters",
   MAX_LENGTH: "Maximum length is {length} characters",
   MIN_VALUE: "Minimum value is {value}",
   MAX_VALUE: "Maximum value is {value}",
   IS_INTEGER: "Value must be an integer",
   IS_POSITIVE: "Value must be positive",
-  IS_NEGATIVE: "Value must be negative",
-}
+  IS_NEGATIVE: "Value must be negative"
+};

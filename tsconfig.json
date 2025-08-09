@@ -5,9 +5,7 @@
     "lib": ["ESNEXT", "DOM", "DOM.Iterable"],
     "declaration": true,
     "declarationDir": "lib/types",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "moduleResolution": "node"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"]
