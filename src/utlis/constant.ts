@@ -11,6 +11,7 @@ export const MESSAGES = {
   INVALID_TYPE: "Invalid type provided",
   INVALID_PATTERN: "Invalid format",
   INVALID_EMAIL: "Invalid email format. Make sure your email contains '@' and the full domain.",
+  INVALID_PASSWORD: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
   MIN_LENGTH: "Minimum length is {length} characters",
   MAX_LENGTH: "Maximum length is {length} characters",
   MIN_VALUE: "Minimum value is {value}",
