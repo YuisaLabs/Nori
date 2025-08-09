@@ -1,10 +1,11 @@
 import { Validator } from "../core/validator";
+import { isEmpty } from "../utlis/validation";
 
 type ValidatedData<T> = {
   [K in keyof T]: T[K] extends Validator<infer U> ? U : never;
 };
 
-type SchemaDefinition = Record<string, Validator<any>>;
+export type SchemaDefinition = Record<string, Validator<any>>;
 
 export class FormSchema<T extends SchemaDefinition> {
   constructor(public fields: T) {}
@@ -62,7 +63,7 @@ export class FormSchema<T extends SchemaDefinition> {
   }
 
   private _convertValue(value: any, typeName: string): any {
-    if (value === null || value === undefined || value === "") return value;
+    if (isEmpty(value)) return value;
 
     switch (typeName) {
       case "number":

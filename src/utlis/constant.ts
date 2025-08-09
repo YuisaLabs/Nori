@@ -9,6 +9,8 @@ export const VALIDATOR_OPTIONS = {
 export const MESSAGES = {
   REQUIRED: "This field is required",
   INVALID_TYPE: "Invalid type provided",
+  INVALID_PATTERN: "Invalid format",
+  INVALID_EMAIL: "Invalid email format. Make sure your email contains '@' and the full domain.",
   MIN_LENGTH: "Minimum length is {length} characters",
   MAX_LENGTH: "Maximum length is {length} characters",
   MIN_VALUE: "Minimum value is {value}",

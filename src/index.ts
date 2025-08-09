@@ -9,12 +9,9 @@ export { FormStateManager } from "./form/form-state-manager";
 export type { FormValidatorOptions } from "./form/form-validator";
 export type { FieldState, FormState } from "./form/form-state-manager";
 
-import { FormSchema } from "./form/form-schema";
+import { FormSchema, SchemaDefinition } from "./form/form-schema";
 import { FormValidator } from "./form/form-validator";
-import type { Validator } from "./core/validator";
 import type { FormValidatorOptions } from "./form/form-validator";
-
-type SchemaDefinition = Record<string, Validator<any>>;
 
 export const object = <T extends SchemaDefinition>(
   fields: T
@@ -26,6 +23,6 @@ export const createValidator = (
   formElementOrSelector: HTMLFormElement | string,
   schema: FormSchema<any>,
   options: FormValidatorOptions = {}
-): FormValidator => {
+): FormValidator<SchemaDefinition> => {
   return new FormValidator(formElementOrSelector, schema, options);
 };
