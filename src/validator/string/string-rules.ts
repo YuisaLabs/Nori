@@ -1,5 +1,6 @@
 import { ValidationRule } from "../../core/validator";
 import { MESSAGES } from "../../utlis/constant";
+import { PasswordOptions } from "../../utlis/options";
 import {
   isEmail,
   isEmptyOrWhitespace,
@@ -32,9 +33,11 @@ export const pattern =
     regex.test(value) || message || MESSAGES.INVALID_PATTERN;
 
 export const password =
-  (pattern?: RegExp, message?: string): ValidationRule<string> =>
-  (value) =>
-    isPassword(value, pattern) || message || MESSAGES.INVALID_PASSWORD;
+  (options?: PasswordOptions): ValidationRule<string> =>
+  (value) => {
+    const { message, pattern } = options || {};
+    return isPassword(value, pattern) || message || MESSAGES.INVALID_PASSWORD;
+  };
 
 export const length =
   (length: number, message?: string): ValidationRule<string> =>

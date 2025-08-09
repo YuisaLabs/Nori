@@ -1,4 +1,5 @@
 import { Validator } from "../../core/validator";
+import { PasswordOptions } from "../../utlis/options";
 import * as rules from "./string-rules";
 
 export class StringValidator extends Validator<string> {
@@ -30,8 +31,8 @@ export class StringValidator extends Validator<string> {
     return this.addRule(rules.pattern(regex, message));
   }
 
-  public password(pattern?: RegExp, message?: string): this {
-    return this.addRule(rules.password(pattern, message));
+  public password(options?: PasswordOptions): this {
+    return this.addRule(rules.password(options));
   }
 
   public length(length: number, message?: string): this {
