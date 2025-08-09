@@ -1,23 +1,24 @@
 import { ValidationRule } from "../../core/validator";
+import { MESSAGES } from "../../utlis/constant";
 
 export const required =
   (message?: string): ValidationRule<string> =>
   (value) =>
-    (value && value.trim().length > 0) || message || "This field is required";
+    (value && value.trim().length > 0) || message || MESSAGES.REQUIRED;
 
 export const minLength =
   (length: number, message?: string): ValidationRule<string> =>
   (value) =>
     value.length >= length ||
     message ||
-    `Minimum length is ${length} characters`;
+    MESSAGES.MIN_LENGTH;
 
 export const maxLength =
   (length: number, message?: string): ValidationRule<string> =>
   (value) =>
     value.length <= length ||
     message ||
-    `Maximum length is ${length} characters`;
+    MESSAGES.MAX_LENGTH;
 
 export const email =
   (message?: string): ValidationRule<string> =>

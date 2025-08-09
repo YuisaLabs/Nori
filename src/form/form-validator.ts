@@ -1,19 +1,22 @@
 import { EventEmitter } from "../core/event-emitter";
+import { VALIDATOR_OPTIONS } from "../utlis/constant";
 import { FormSchema } from "./form-schema";
 import { FieldState, FormState, FormStateManager } from "./form-state-manager";
 
+type FormValidateOn = "input" | "blur" | "change" | "submit";
+
 export interface FormValidatorOptions {
-  validateOn?: ("input" | "blur" | "change" | "submit")[];
+  validateOn?: FormValidateOn[];
   errorClass?: string;
   errorAttribute?: string;
   debounceDelay?: number;
 }
 
 const defaultOptions: Required<FormValidatorOptions> = {
-  validateOn: ["submit"],
-  errorClass: "is-invalid",
-  errorAttribute: "data-error-for",
-  debounceDelay: 300,
+  validateOn: [VALIDATOR_OPTIONS.VALIDATE_ON],
+  errorClass: VALIDATOR_OPTIONS.ERROR_CLASS,
+  errorAttribute: VALIDATOR_OPTIONS.ERROR_ATTRIBUTE,
+  debounceDelay: VALIDATOR_OPTIONS.DEBOUNCE_DELAY,
 };
 
 interface FormValidatorEvents {
