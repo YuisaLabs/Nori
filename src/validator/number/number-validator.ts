@@ -4,10 +4,10 @@ import * as rules from "./number-rules";
 type Numeric = number | string;
 
 export class NumberValidator extends Validator<Numeric> {
-  constructor() {
+  constructor(message?: string) {
     super("number");
     this.addRule(
-      (value) => !isNaN(parseFloat(String(value))) || "Value must be a number"
+      (value) => !isNaN(parseFloat(String(value))) || message || "Value must be a number"
     );
   }
 

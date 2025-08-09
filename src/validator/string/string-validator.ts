@@ -2,10 +2,10 @@ import { Validator } from "../../core/validator";
 import * as rules from "./string-rules";
 
 export class StringValidator extends Validator<string> {
-  constructor() {
+  constructor(message?: string) {
     super("string");
     this.addRule(
-      (value) => typeof value === "string" || "Value must be a string"
+      (value) => typeof value === "string" || message || "Value must be a string"
     );
   }
 
